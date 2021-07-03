@@ -1,0 +1,43 @@
+import java.util.*;
+class hacker2
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int n;
+n=sc.nextInt(); //4
+int size=n*2-1; //7
+int[][] a=new int[size][size]; //7x7
+int start,end,i,j;
+start=0;
+end=size-1; //6
+while(n!=0)
+{
+for(i=start;i<=end;i++) //1 ,5
+{
+for(j=start;j<=end;j++) //1 ,5
+{
+if(i==start || i==end || j==start||j==end) //i=0, 6,j=0,6 i=1,5,j=1,5 i=2,4 j=2,4
+a[i][j] = n; // a[][]--> 4 --> 3 ---> 2 --> 1
+}}
+n--; //3 ,2, 1 --> 0
+start++; // 1 2 ,3
+end--; // 5 4, 3
+}
+for(i=0;i<size;i++)
+{
+for(j=0;j<size;j++)
+{
+System.out.print(a[i][j]+" ");
+}
+System.out.println();
+}
+}
+OUTPUT
+A A A A A A A
+A B B B B B A
+A B C C C B A
+A B C D C B A
+A B C C C B A
+A B B B B B A
+A A A A A A A
